@@ -6,8 +6,15 @@ const login = () => {
         password : password.value
     };
 
-    // fetch();
-    console.log(req);
+    fetch("/login", {
+        method : "POST",
+        headers : {
+            "Content-Type" : "application/json",
+        },
+        body: JSON.stringify(req),
+    });
+    // console.log(req);
+    // console.log(JSON.stringify(req));
 };
 
 const id = document.querySelector("#id"),
