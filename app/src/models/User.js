@@ -8,10 +8,10 @@ class User {
   }
 
   login() {
-    const body = this.body;
-    const { id, password } = UserStorage.getUserInfo(body.id);
+    const client = this.body;
+    const { id, password } = UserStorage.getUserInfo(client.id);
     if (id) {
-      if (id === body.id && password === body.password) {
+      if (id === client.id && password === client.password) {
         return { success: true };
       }
       return {
@@ -23,6 +23,12 @@ class User {
       success: false,
       msg: "존재하지 않는 정보입니다.",
     };
+  }
+
+  register() {
+    const client = this.body;
+    const response = UserStorage.save(client);
+    return response;
   }
 }
 
