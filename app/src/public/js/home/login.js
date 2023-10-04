@@ -5,7 +5,6 @@ const login = () => {
     id: id.value,
     password: password.value,
   };
-
   fetch("/login", {
     method: "POST",
     headers: {
