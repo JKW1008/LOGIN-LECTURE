@@ -2,8 +2,9 @@
 
 const register = () => {
   if (!id.value) return alert("아이디를 입력해 주세요.");
+  if (!name.value) return alert("이름을 입력해 주세요.");
   if (!password.value) return alert("비밀번호를 입력해 주세요.");
-  if (password !== confirmPassword)
+  if (password.value !== confirmPassword.value)
     return alert("비밀번호가 일치하지 않습니다.");
 
   const req = {
